@@ -21,10 +21,10 @@ const MarkdownRenderer: React.FC<Props> = ({ content }) => {
           ),
           a: ({ node, ...props }) => (
             <a
+              {...props}
               className="underline text-[#1c5b92]"
               target="_blank"
               rel="noopener noreferrer"
-              {...props}
             />
           ),
           code: ({ node, inline, ...props }) =>

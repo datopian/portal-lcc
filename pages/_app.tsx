@@ -11,7 +11,7 @@ import Loader from "../components/_shared/Loader";
 
 import ThemeProvider from "../components/theme/theme-provider";
 
-import { Inter, Montserrat, Poppins, Open_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 const openSans = Open_Sans({
