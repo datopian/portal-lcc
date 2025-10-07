@@ -1,0 +1,22 @@
+import Layout from "@/components/_shared/Layout";
+import { getMarkdownContent } from "@/lib/markdown";
+import MarkdownRenderer from "@/components/_shared/MarkdownRender";
+
+export const getServerSideProps = async (context) => {
+  const content = await getMarkdownContent(`about.md`)
+  return {
+    props: {
+      content,
+    },
+  };
+};
+
+export default function PrivacyPolicyPage({ content }) {
+  return (
+    <Layout>
+      <main className="custom-container py-8">
+        <MarkdownRenderer content={content} />
+      </main>
+    </Layout>
+  );
+}
