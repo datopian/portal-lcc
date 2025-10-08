@@ -19,13 +19,21 @@ const LighterThemeFooter: React.FC = () => {
     ],
     useful: [
       { name: "Organizations", href: "/organizations" },
-      { name: "Groups", href: "/groups" },
+      { name: "Themes", href: "/themes" },
       { name: "Login", href: "https://cloud.portaljs.com/auth/signin" },
     ],
     getStarted: [
       {
         name: "Find data",
         href: "/search",
+      },
+      {
+        name: "Explore visualizations",
+        href: "/search?type=visualization",
+      },
+      {
+        name: "Explore data with AI",
+        href: "/ai",
       },
 
     ],

@@ -74,7 +74,7 @@ function SearchPageContent() {
       </div>
       <div className="custom-container bg-white">
         <article className="grid grid-cols-1 lg:grid-cols-9 gap-x-6 xl:gap-x-12 pt-[30px] pb-[30px]">
-          <div className="lg:col-span-3  lg:sticky top-3 h-fit">
+          <div className="lg:col-span-3  top-3 h-fit">
             <DatasetSearchFilters />
           </div>
           <div className="lg:col-span-6">

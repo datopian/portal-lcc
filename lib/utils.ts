@@ -41,3 +41,10 @@ export function capitalizeFirstLetter(str: string) {
   }
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+
+export function stripHTML(html:string) {
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = html;
+  return tempDiv.textContent || tempDiv.innerText || "";
+}

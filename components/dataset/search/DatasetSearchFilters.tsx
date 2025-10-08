@@ -16,8 +16,7 @@ import { classNames } from "primereact/utils";
 
 export default function DatasetSearchFilters() {
   const [showFilters, setShowFilters] = useState(true);
-  const [seeMoreOrgs, setSeeMoreOrgs] = useState(false);
-  const [seeMoreGroups, setSeeMoreGroups] = useState(false);
+
   const {
     searchFacets,
     options,
@@ -43,7 +42,7 @@ export default function DatasetSearchFilters() {
       </a>
       <div className={` ${showFilters ? "block" : "hidden"} lg:block`}>
         <FacetCard title="Type">
-          <div className="text-[#5F5F5F] space-y-[10px]">
+          <div className="text-[#5F5F5F] space-y-[10px] px-4">
             <DatasetTypeOption
               title="Datasets"
               Icon={CircleStackIcon}
@@ -74,15 +73,8 @@ export default function DatasetSearchFilters() {
           }}
         >
           <div>
-            <div className="max-h-[400px] overflow-y-auto">
-              {searchFacets.organization?.items
-                ?.slice(
-                  0,
-                  seeMoreOrgs
-                    ? searchFacets.organization?.items?.length
-                    : maxPerView
-                )
-                .map((org: PackageFacetOptions) => (
+            <div className="max-h-[340px] px-4 overflow-y-auto">
+              {searchFacets.organization?.items.map((org: PackageFacetOptions) => (
                   <MultiCheckbox
                     name={"orgs"}
                     value={org.name}
@@ -92,16 +84,6 @@ export default function DatasetSearchFilters() {
                   />
                 ))}
             </div>
-
-            {searchFacets.organization?.items?.length > maxPerView && (
-              <button
-                onClick={() => setSeeMoreOrgs(!seeMoreOrgs)}
-                type="button"
-                className="bg-[var(--dark)] hover:bg-black text-white py-[10px] px-[12px] rounded-[4px] mt-2 transition font-[600] text-[12px] leading-[15px]"
-              >
-                See {seeMoreOrgs ? "Less" : "More"}
-              </button>
-            )}
           </div>
         </FacetCard>
         {searchFacets.groups?.items.length > 0 && (
@@ -120,15 +102,8 @@ export default function DatasetSearchFilters() {
             }}
           >
             <div>
-              <div className="max-h-[400px] overflow-y-auto">
-                {searchFacets.groups?.items
-                  ?.slice(
-                    0,
-                    seeMoreGroups
-                      ? searchFacets.groups?.items?.length
-                      : maxPerView
-                  )
-                  .map((group: PackageFacetOptions) => {
+              <div className="max-h-[340px] px-4 overflow-y-auto">
+                {searchFacets.groups?.items.map((group: PackageFacetOptions) => {
                     return (
                       <MultiCheckbox
                         name={"groups"}
@@ -140,15 +115,6 @@ export default function DatasetSearchFilters() {
                     );
                   })}
               </div>
-              {searchFacets.groups?.items?.length > maxPerView && (
-                <button
-                  onClick={() => setSeeMoreGroups(!seeMoreGroups)}
-                  type="button"
-                  className="bg-[var(--dark)] hover:bg-black text-white py-[10px] px-[12px] rounded-[4px] mt-2 transition font-[600] text-[12px] leading-[15px]"
-                >
-                  See {seeMoreGroups ? "Less" : "More"}
-                </button>
-              )}
             </div>
           </FacetCard>
         )}
@@ -168,7 +134,7 @@ export default function DatasetSearchFilters() {
             }}
           >
             <div>
-              <div className="max-h-[400px] overflow-y-auto">
+              <div className="max-h-[340px] px-4 overflow-y-auto">
                 {searchFacets?.tags?.items.map((tag: PackageFacetOptions) => (
                   <MultiCheckbox
                     name={"tags"}
@@ -198,7 +164,7 @@ export default function DatasetSearchFilters() {
             }}
           >
             <div>
-              <div className="max-h-[400px] overflow-y-auto">
+              <div className="max-h-[340px] px-4 overflow-y-auto">
                 {searchFacets?.res_format?.items.map(
                   (format: PackageFacetOptions) => (
                     <MultiCheckbox
