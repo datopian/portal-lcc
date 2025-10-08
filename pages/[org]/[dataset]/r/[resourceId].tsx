@@ -7,7 +7,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { RiArrowLeftLine } from "react-icons/ri";
 import ResourcesBadges from "@/components/dataset/_shared/ResourcesBadges";
-import Head from "next/head";
 import { PrimeReactProvider } from "primereact/api";
 import ResponsiveGridData from "@/components/responsiveGrid";
 import { getTimeAgo } from "@/lib/utils";
@@ -71,7 +70,7 @@ export default function ResourcePage({
   resource,
   orgName
 }: {
-  resource: Resource;
+  resource: Resource & { iframe?:boolean };
   orgName: string
 }): JSX.Element {
   const resourceFormat = resource.format.toLowerCase();
@@ -80,7 +79,7 @@ export default function ResourcePage({
 
   return (
     <PrimeReactProvider>
-      <ResourcePageStructuredData resource={resource} orgName={orgName} dataset={dataset} />
+      <ResourcePageStructuredData resource={resource} orgName={orgName} dataset={dataset as string} />
       <Layout>
         <div className="custom-container pt-[30px]">
           <Link

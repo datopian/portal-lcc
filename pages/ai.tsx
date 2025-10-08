@@ -1,0 +1,22 @@
+import Layout from "@/components/_shared/Layout";
+import { getMarkdownContent } from "@/lib/markdown";
+import MarkdownRenderer from "@/components/_shared/MarkdownRender";
+
+export const getServerSideProps = async () => {
+  const content = await getMarkdownContent(`ai.md`)
+  return {
+    props: {
+      content,
+    },
+  };
+};
+
+export default function AiPage({ content }: { content: string }) {
+  return (
+    <Layout>
+      <main className="custom-container py-8">
+        <MarkdownRenderer content={content} />
+      </main>
+    </Layout>
+  );
+}

@@ -59,12 +59,12 @@ export default function LighterThemeHeader() {
                 ORGANIZATIONS
               </Link>
               <Link
-                href="/groups"
+                href="/themes"
                 className={`font-semibold my-auto ${
-                  router.pathname === "/groups" ? "text-accent" : ""
+                  router.pathname === "/themes" ? "text-accent" : ""
                 }`}
               >
-                GROUPS
+                THEMES
               </Link>
             </div>
           </div>

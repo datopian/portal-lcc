@@ -1,7 +1,11 @@
 import SearchForm from "./SearchForm";
 
-
-import { RiBarChartLine, RiFileCopy2Line, RiFunctionLine, RiTeamLine } from "react-icons/ri";
+import {
+  RiBarChartLine,
+  RiFileCopy2Line,
+  RiFunctionLine,
+  RiTeamLine,
+} from "react-icons/ri";
 import { Stat } from "../heroSection/Stats";
 
 export default function HeroSectionLight({
@@ -18,15 +22,15 @@ export default function HeroSectionLight({
     <div>
       <div className="custom-container mx-auto bg-white">
         <div className="flex flex-col lg:flex-row lg:items-center py-[30px] md:py-[80px] lg:py-[140px] gap-10 lg:gap-0">
-          <div className="lg:max-w-[478px]">
-            <h1 className="font-black text-[40px] md:text-[55px] flex flex-col leading-[50px] md:leading-[65px]">
-              <span>Find and Share</span>
-              <span className="text-accent">Quality Data.</span>
+          <div className="lg:max-w-[578px]">
+            <h1 className="font-black text-[40px] md:text-[48px] flex flex-col leading-[45px] md:leading-[50px]">
+              <span>Welcome to</span>
+              <span><span className="text-accent">Lincolnshire</span> Open Data!</span>
+              <span></span>
             </h1>
             <p className="text-[16px] md:text-[20px] text-[var(--text-gray)] mt-[10px] mb-[30px]">
-              At Portal, we have over thousands of datasets for free and a
-              Premium Data Service for additional or customised data with
-              guaranteed updates.
+              Lincolnshire Open Data has been created to support Lincolnshire
+              County Council&#39;s commitment to freeing up Lincolnshire&#39;s data.
             </p>
 
             <SearchForm />
@@ -40,17 +44,19 @@ export default function HeroSectionLight({
               count={stats.datasetCount}
               label="Dataset"
             />
-            {!!stats.visualizationCount && <Stat
-              Icon={RiBarChartLine}
-              href="/search?type=visualization"
-              count={stats.visualizationCount}
-              label="Visualization"
-            />}
+            {!!stats.visualizationCount && (
+              <Stat
+                Icon={RiBarChartLine}
+                href="/search?type=visualization"
+                count={stats.visualizationCount}
+                label="Visualization"
+              />
+            )}
             <Stat
               Icon={RiFunctionLine}
-              href="/groups"
+              href="/themes"
               count={stats.groupCount}
-              label="Group"
+              label="Theme"
             />
             <Stat
               Icon={RiTeamLine}
