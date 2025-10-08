@@ -11,7 +11,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-export default function AboutPage({ content }) {
+export default function AboutPage({ content }: { content: string }) {
   return (
     <Layout>
       <main className="custom-container py-8">

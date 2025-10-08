@@ -11,8 +11,8 @@ export async function getMarkdownContent(fileName: string): Promise<string> {
   }
 }
 
-export const extractTitle = (content) => {
-  const match = content?.match(/^#+\s*(.*?)(?=\r?\n|$)/);
+export const extractTitle = (content: string): string | null => {
+  const match = content?.match(/^#+\s*(.*?)(?=\r?\n|$)/m);
   const firstHeading = match ? match[1] : null;
   return firstHeading;
 };
