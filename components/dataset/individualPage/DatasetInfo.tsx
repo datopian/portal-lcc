@@ -126,7 +126,7 @@ export default function DatasetInfo({
           </span>
         ))}
       </div>
-      <span className="font-medium text-gray-500 inline">
+      <div className="font-medium text-gray-500 inline mt-3">
         <div className="flex flex-wrap gap-x-2 items-center">
           <div>Export metadata as: </div>
           {metaFormats.map((item) => (
@@ -143,7 +143,7 @@ export default function DatasetInfo({
             </div>
           ))}
         </div>
-      </span>
+      </div>
     </div>
   );
 }

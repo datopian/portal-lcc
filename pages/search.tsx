@@ -14,15 +14,47 @@ import {
 import { PackageSearchOptions } from "@portaljs/ckan";
 import { SearchPageStructuredData } from "@/components/schema/SearchPageStructuredData";
 
-export async function getServerSideProps() {
-  // TODO: this doesn't work properly. It must read the params from the URL.
-  const initialRequestOption: PackageSearchOptions = {
-    offset: 0,
-    limit: 10,
-    tags: [],
-    groups: [],
-    orgs: [],
-    resFormat: [],
+export async function getServerSideProps(context) {
+  const initialRequestOption: PackageSearchOptions & { type?: string } = {
+    offset: context.query.offset
+      ? Number.parseInt(
+          Array.isArray(context.query.offset)
+            ? context.query.offset[0]
+            : context.query.offset,
+          10
+        ) || 0
+      : 0,
+    limit: context.query.limit
+      ? Number.parseInt(
+          Array.isArray(context.query.limit)
+            ? context.query.limit[0]
+            : context.query.limit,
+          10
+        ) || 10
+      : 10,
+    tags: context.query.tags
+      ? Array.isArray(context.query.tags)
+        ? context.query.tags
+        : [context.query.tags]
+      : [],
+    groups: context.query.groups
+      ? Array.isArray(context.query.groups)
+        ? context.query.groups
+        : [context.query.groups]
+      : [],
+    orgs: context.query.orgs
+      ? Array.isArray(context.query.orgs)
+        ? context.query.orgs
+        : [context.query.orgs]
+      : [],
+    resFormat: context.query.resFormat
+      ? Array.isArray(context.query.resFormat)
+        ? context.query.resFormat
+        : [context.query.resFormat]
+      : [],
+    type: context.query.type || "dataset",
+    query: context.query.query || "",
+    sort: context.query.sort || "",
   };
 
   const search_result = await searchDatasets(initialRequestOption);
@@ -74,7 +106,7 @@ function SearchPageContent() {
       </div>
       <div className="custom-container bg-white">
         <article className="grid grid-cols-1 lg:grid-cols-9 gap-x-6 xl:gap-x-12 pt-[30px] pb-[30px]">
-          <div className="lg:col-span-3  lg:sticky top-3 h-fit">
+          <div className="lg:col-span-3  top-3 h-fit">
             <DatasetSearchFilters />
           </div>
           <div className="lg:col-span-6">

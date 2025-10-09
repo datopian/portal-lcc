@@ -18,12 +18,12 @@ export default function PopularDatasets({
     >
       <div>
         <div
-          className={`inline-block align-middle w-12 h-0.5 border border-accent`}
+          className={`inline-block align-middle w-8 lg:w-10 h-0.5 border border-accent`}
         />
-        <span className="inline-block font-roboto text-sm text-center pl-2">
-          &nbsp; MOST POPULAR DATASETS
-        </span>
-        <h1 className="font-inter font-black text-4xl mt-6">Highlights</h1>
+        <h2 className="inline-block font-roboto text-center pl-2 text-[14px] lg:text-[18px]">
+          &nbsp; MOST RECENT DATASETS
+        </h2>
+      
         <div className="flex flex-col">
           {datasets.map((dataset, index) => (
             <Link

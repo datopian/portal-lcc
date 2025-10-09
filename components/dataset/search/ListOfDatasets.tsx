@@ -34,7 +34,7 @@ function ListItems() {
             Sort by:{" "}
             <select
               aria-label="Sort datasets by"
-              value={options.sort ?? "score desc"}
+              value={options.sort ?? "metadata_modified desc"}
               onChange={(e) => {
                 const value = e.target.value;
                 setOptions({ sort: value });

@@ -57,7 +57,7 @@ export const SearchStateProvider = ({
     orgs: parseArQueryParam(query?.orgs),
     resFormat: parseArQueryParam(query?.resFormat),
     query: (query?.query as string) ?? "",
-    sort: (query?.sort as string) ?? "score desc",
+    sort: (query?.sort as string) ?? "metadata_modified desc",
     type: (query?.type as string) ?? "dataset",
   };
 

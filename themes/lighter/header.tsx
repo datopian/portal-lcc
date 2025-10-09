@@ -11,7 +11,7 @@ export default function LighterThemeHeader() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme } = useTheme();
-  const portalLogo = process?.env?.NEXT_PUBLIC_PORTAL_LOGO;
+  const portalLogo = process?.env?.NEXT_PUBLIC_PORTAL_LOGO || "/images/logos/site-logo.svg";
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -34,7 +34,7 @@ export default function LighterThemeHeader() {
           <span className="sr-only">Portal</span>
           {portalLogo ? (
             <Link href="/">
-              <Image src={portalLogo} alt="logo" height={55} width={55} />
+              <Image src={portalLogo} alt="logo" height={75} width={225} />
             </Link>
           ) : (
             <PortalDefaultLogo />
@@ -59,12 +59,12 @@ export default function LighterThemeHeader() {
                 ORGANIZATIONS
               </Link>
               <Link
-                href="/groups"
+                href="/themes"
                 className={`font-semibold my-auto ${
-                  router.pathname === "/groups" ? "text-accent" : ""
+                  router.pathname === "/themes" ? "text-accent" : ""
                 }`}
               >
-                GROUPS
+                THEMES
               </Link>
             </div>
           </div>
@@ -91,12 +91,7 @@ export default function LighterThemeHeader() {
           <div className="flex items-center justify-between">
             <span className="sr-only">Datopian</span>
             <Link href="/" className="-m-1.5 p-1.5 inline-block md:hidden">
-              <Image
-                src="/images/logos/logo.svg"
-                width={55}
-                height={55}
-                alt="Portal"
-              />
+              <Image src={portalLogo} alt="logo" height={75} width={225} />
             </Link>
             <button
               type="button"
@@ -114,10 +109,10 @@ export default function LighterThemeHeader() {
                   DATASETS
                 </Link>
                 <Link href="/organizations" className="font-semibold my-auto">
-                  ORGS
+                  ORGANIZATIONS
                 </Link>
-                <Link href="/groups" className="font-semibold my-auto">
-                  GROUPS
+                <Link href="/themes" className="font-semibold my-auto">
+                  THEMES
                 </Link>
               </div>
             </div>

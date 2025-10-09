@@ -11,29 +11,18 @@ import Loader from "../components/_shared/Loader";
 
 import ThemeProvider from "../components/theme/theme-provider";
 
-import { Inter, Montserrat, Poppins } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const poppins = Poppins({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-poppins",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat"
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter"
+  variable: "--font-open-sans"
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
   const theme = pageProps.theme || "lighter";
   return (
-    <div className={cn(poppins.variable, montserrat.variable, inter.variable)}>
+    <div className={cn(openSans.variable, "font-sans")}>
       <ThemeProvider themeName={theme}>
         <DefaultSeo {...SEO} />
         <Loader />

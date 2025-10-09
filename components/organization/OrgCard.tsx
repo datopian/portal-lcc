@@ -1,3 +1,4 @@
+import { stripHTML } from "@/lib/utils";
 import { Organization } from "@portaljs/ckan";
 import getConfig from "next/config";
 import Image from "next/image";
@@ -37,14 +38,10 @@ export default function GroupCard({
           width="43"
           height="43"
         ></Image>
-        <h3 className="font-inter font-semibold text-lg mt-4 group-hover:text-accent">
+        <h3 className="font-inter font-semibold text-lg mt-4 group-hover:text-accent line-clamp-2 min-h-[56px]">
           {display_name}
         </h3>
-        <p className="font-inter font-medium text-sm mt-1 mb-6 line-clamp-2">
-          {description}
-        </p>
-
-        <span className="font-inter mt-auto font-medium text-sm text-accent cursor-pointer flex items-center gap-1">
+        <span className="font-inter mt-3 font-medium text-sm text-accent cursor-pointer flex items-center gap-1">
           View <RiArrowRightLine />
         </span>
       </div>

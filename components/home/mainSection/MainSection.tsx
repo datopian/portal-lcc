@@ -7,9 +7,9 @@ import {
   ArrowLongRightIcon,
 } from "@heroicons/react/20/solid";
 import {
+  RiBarChart2Line,
   RiQuestionnaireLine,
   RiSearch2Line,
-  RiUploadCloud2Line,
 } from "react-icons/ri";
 import { Dataset } from "@/schemas/dataset.interface";
 
@@ -22,7 +22,7 @@ export default function MainSection({
   datasets: Array<Dataset>;
 }) {
   return (
-    <section className="custom-container homepage-padding bg-white">
+    <section className="custom-container homepage-padding bg-white pb-0">
       <div className="flex flex-col md:flex-row md:items-start gap-8 mb-[100px]">
         {[
           {
@@ -32,15 +32,15 @@ export default function MainSection({
             icon: <RiSearch2Line width={48} />,
           },
           {
-            title: "Add Data",
-            description: "Make your dataset available on Portal.",
-            href: "#",
-            icon: <RiUploadCloud2Line width={48} />,
+            title: "Explore Visualisations",
+            description: "Dive into curated visual stories powered by real data.",
+            href: "/search?type=visualization",
+            icon: <RiBarChart2Line width={48} />,
           },
           {
-            title: "Request Data",
-            description: "Send us a request for the data you didn’t find.",
-            href: "#",
+            title: "Explore Data with AI",
+            description: "Use Claude or ChatGPT to explore the data portal via our MCP server.",
+            href: "/ai",
             icon: <RiQuestionnaireLine width={48} />,
           },
         ].map((item, i) => (
