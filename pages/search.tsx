@@ -15,10 +15,23 @@ import { PackageSearchOptions } from "@portaljs/ckan";
 import { SearchPageStructuredData } from "@/components/schema/SearchPageStructuredData";
 
 export async function getServerSideProps(context) {
-
-  const initialRequestOption: PackageSearchOptions & {type?:string} = {
-    offset: context.query.offset || 0,
-    limit: context.query.limit || 10,
+  const initialRequestOption: PackageSearchOptions & { type?: string } = {
+    offset: context.query.offset
+      ? Number.parseInt(
+          Array.isArray(context.query.offset)
+            ? context.query.offset[0]
+            : context.query.offset,
+          10
+        ) || 0
+      : 0,
+    limit: context.query.limit
+      ? Number.parseInt(
+          Array.isArray(context.query.limit)
+            ? context.query.limit[0]
+            : context.query.limit,
+          10
+        ) || 10
+      : 10,
     tags: context.query.tags
       ? Array.isArray(context.query.tags)
         ? context.query.tags
