@@ -18,9 +18,9 @@ export default function PopularDatasets({
     >
       <div>
         <div
-          className={`inline-block align-middle w-10 h-0.5 border border-accent`}
+          className={`inline-block align-middle w-8 lg:w-10 h-0.5 border border-accent`}
         />
-        <h2 className="inline-block font-roboto text-center pl-2 text-[18px]">
+        <h2 className="inline-block font-roboto text-center pl-2 text-[14px] lg:text-[18px]">
           &nbsp; MOST RECENT DATASETS
         </h2>
       
