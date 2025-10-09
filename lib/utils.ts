@@ -6,21 +6,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function getDatasetName(name: string) {
+function stripOrgPrefix(name: string) {
   const mainOrg = process.env.NEXT_PUBLIC_ORG;
-  const datasetName =
+  const strippedName =
     name?.indexOf(`${mainOrg}--`) >= 0 ? name?.split(`${mainOrg}--`)[1] : name;
-
-  return datasetName;
+  return strippedName;
 }
-
-export function getOrganizationName(name: string) {
-  const mainOrg = process.env.NEXT_PUBLIC_ORG;
-  const orgName =
-    name?.indexOf(`${mainOrg}--`) >= 0 ? name?.split(`${mainOrg}--`)[1] : name;
-
-  return orgName;
-}
+export const getDatasetName = stripOrgPrefix;
+export const getOrganizationName = stripOrgPrefix;
 
 export function getTimeAgo(timestamp: string) {
   const trimmed = timestamp.trim();
@@ -43,8 +36,7 @@ export function capitalizeFirstLetter(str: string) {
 }
 
 
-export function stripHTML(html:string) {
-  const tempDiv = document.createElement("div");
-  tempDiv.innerHTML = html;
-  return tempDiv.textContent || tempDiv.innerText || "";
+export function stripHTML(html: string) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  return doc.body.textContent || "";
 }

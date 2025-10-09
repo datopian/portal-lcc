@@ -1,11 +1,11 @@
 /* eslint-disable import/no-anonymous-default-export */
 
-export const siteTitle = "PortalJS Open Data Portal";
+export const siteTitle = "Lincolnshire Open Data";
 export const title = "PortalJS";
 export const description =
   "Discover thousands of datasets, publish your own, and request data via Portal – an open data platform powered by PortalJS.";
 
-export const url = "https://portaljs-cloud-frontend-template.vercel.app";
+export const url = "https://lcc.portaljs.com";
 export const imageUrl = `${url}/images/portaljs-frontend.png`;
 
 export default {

@@ -14,15 +14,34 @@ import {
 import { PackageSearchOptions } from "@portaljs/ckan";
 import { SearchPageStructuredData } from "@/components/schema/SearchPageStructuredData";
 
-export async function getServerSideProps() {
-  // TODO: this doesn't work properly. It must read the params from the URL.
-  const initialRequestOption: PackageSearchOptions = {
-    offset: 0,
-    limit: 10,
-    tags: [],
-    groups: [],
-    orgs: [],
-    resFormat: [],
+export async function getServerSideProps(context) {
+
+  const initialRequestOption: PackageSearchOptions & {type?:string} = {
+    offset: context.query.offset || 0,
+    limit: context.query.limit || 10,
+    tags: context.query.tags
+      ? Array.isArray(context.query.tags)
+        ? context.query.tags
+        : [context.query.tags]
+      : [],
+    groups: context.query.groups
+      ? Array.isArray(context.query.groups)
+        ? context.query.groups
+        : [context.query.groups]
+      : [],
+    orgs: context.query.orgs
+      ? Array.isArray(context.query.orgs)
+        ? context.query.orgs
+        : [context.query.orgs]
+      : [],
+    resFormat: context.query.resFormat
+      ? Array.isArray(context.query.resFormat)
+        ? context.query.resFormat
+        : [context.query.resFormat]
+      : [],
+    type: context.query.type || "dataset",
+    query: context.query.query || "",
+    sort: context.query.sort || "",
   };
 
   const search_result = await searchDatasets(initialRequestOption);

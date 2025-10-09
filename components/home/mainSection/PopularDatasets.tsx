@@ -20,9 +20,9 @@ export default function PopularDatasets({
         <div
           className={`inline-block align-middle w-10 h-0.5 border border-accent`}
         />
-        <span className="inline-block font-roboto text-center pl-2 text-[20px]">
+        <h2 className="inline-block font-roboto text-center pl-2 text-[18px]">
           &nbsp; MOST RECENT DATASETS
-        </span>
+        </h2>
       
         <div className="flex flex-col">
           {datasets.map((dataset, index) => (
