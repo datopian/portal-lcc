@@ -22,7 +22,7 @@ export default function MainSection({
   datasets: Array<Dataset>;
 }) {
   return (
-    <section className="custom-container homepage-padding bg-white pb-0">
+    <section className="custom-container homepage-padding pb-0">
       <div className="flex flex-col md:flex-row md:items-start gap-8 mb-[100px]">
         {[
           {
@@ -57,7 +57,7 @@ export default function MainSection({
           {groups.length > 4 && (
             <Link
               href="/themes"
-              className={`font-montserrat font-semibold flex items-center gap-1 uppercase hover:text-darkaccent ml-auto w-fit absolute right-0 top-[-30px]`}
+              className={`font-montserrat font-semibold flex items-center gap-1 uppercase hover:text-accent ml-auto w-fit absolute right-0 top-[-30px]`}
             >
               View all themes
               <ArrowLongRightIcon width={16} />

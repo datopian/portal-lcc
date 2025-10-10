@@ -49,7 +49,7 @@ export default function ResourcesList({
             {resource.url && (
               <Link
                 href={resource.url}
-                className="bg-accent px-2 py-1 h-fit shadow hover:shadow-lg transition-all text-sm  text-center text-white rounded font-roboto font-bold hover:bg-darkaccent hover:text-white duration-150 flex items-center justify-center gap-1"
+                className="bg-accent-400 px-2 py-1 h-fit shadow hover:shadow-lg transition-all text-sm  text-center text-black rounded font-roboto font-bold hover:bg-accent duration-150 flex items-center justify-center gap-1"
               >
                 <RiDownload2Fill />
                 <span>Download</span>
