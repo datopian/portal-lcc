@@ -27,7 +27,7 @@ export default function DatasetInfo({
         {dataset.type === "visualization" && !!dataset.external_url && (
           <a
             href={dataset.external_url}
-            className={`font-medium flex items-center gap-1 text-accent`}
+            className={`font-medium flex items-center gap-1 text-black hover:text-accent w-fit`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -119,7 +119,7 @@ export default function DatasetInfo({
       <div className="flex flex-wrap gap-1">
         {dataset.tags?.map((tag: Tag) => (
           <span
-            className="bg-accent px-4 py-1 rounded-full text-white"
+            className="bg-accent-100 px-4 py-1 rounded-full text-black"
             key={tag.id}
           >
             {tag.display_name}

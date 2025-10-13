@@ -170,7 +170,7 @@ export default function ResourcePage({
               <div className=" py-4">
                 <Link
                   href={resource.url}
-                  className="bg-accent h-auto py-2 px-4 text-sm text-white rounded-xl font-roboto font-bold hover:bg-darkaccent hover:text-white duration-150 flex items-center gap-1 w-fit"
+                  className="bg-accent-400 h-auto py-2 px-4 text-sm text-black rounded-lg font-roboto font-bold hover:bg-accent transition ring-1 ring-inset ring-accent hover:shadow duration-150 flex items-center gap-1 w-fit"
                 >
                   Download
                   <svg

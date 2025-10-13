@@ -41,8 +41,8 @@ export default function GroupCard({
         <h3 className="font-inter font-semibold text-lg mt-4 group-hover:text-accent line-clamp-2 min-h-[56px]">
           {display_name}
         </h3>
-        <span className="font-inter mt-3 font-medium text-sm text-accent cursor-pointer flex items-center gap-1">
-          View <RiArrowRightLine />
+        <span className="font-inter mt-3 font-medium text-sm group-hover:text-accent cursor-pointer flex items-center gap-1">
+          View <RiArrowRightLine  className="text-accent"/>
         </span>
       </div>
     </Link>

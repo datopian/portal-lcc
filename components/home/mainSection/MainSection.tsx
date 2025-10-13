@@ -22,7 +22,7 @@ export default function MainSection({
   datasets: Array<Dataset>;
 }) {
   return (
-    <section className="custom-container homepage-padding bg-white pb-0">
+    <section className="custom-container homepage-padding pb-0">
       <div className="flex flex-col md:flex-row md:items-start gap-8 mb-[100px]">
         {[
           {
@@ -57,13 +57,13 @@ export default function MainSection({
           {groups.length > 4 && (
             <Link
               href="/themes"
-              className={`font-montserrat font-semibold flex items-center gap-1 uppercase hover:text-darkaccent ml-auto w-fit absolute right-0 top-[-30px]`}
+              className={`font-montserrat border-b-2 border-accent font-semibold flex items-center gap-1 uppercase hover:text-accent ml-auto w-fit absolute right-0 top-[-30px]`}
             >
               View all themes
               <ArrowLongRightIcon width={16} />
             </Link>
           )}
-          <div className="col-span-1 grid sm:grid-cols-2 gap-4 md:pl-2">
+          <div className="mt-2 col-span-1 grid sm:grid-cols-2 gap-4 md:pl-2">
             {groups.slice(0, 4).map((group) => (
               <article key={group.id} className="col-span-1 h-fit">
                 <GroupCard

@@ -19,13 +19,13 @@ export default function HeroSectionLight({
   };
 }) {
   return (
-    <div>
-      <div className="custom-container mx-auto bg-white">
+    <div className="">
+      <div className="custom-container mx-auto ">
         <div className="flex flex-col lg:flex-row lg:items-center py-[30px] md:py-[80px] lg:py-[140px] gap-10 lg:gap-0">
           <div className="lg:max-w-[578px]">
             <h1 className="font-black text-[40px] md:text-[48px] flex flex-col leading-[45px] md:leading-[50px]">
               <span>Welcome to</span>
-              <span><span className="text-accent">Lincolnshire</span> Open Data!</span>
+              <span><span className="">Lincolnshire</span> Open Data!</span>
               <span></span>
             </h1>
             <p className="text-[16px] md:text-[20px] text-[var(--text-gray)] mt-[10px] mb-[30px]">
