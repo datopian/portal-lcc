@@ -6,73 +6,54 @@ on:
     branches: [main]
 
 jobs:
-  a11y:
+  accessibility:
     runs-on: ubuntu-latest
     env:
       BASE_URL: http://localhost:3000
 
     steps:
-      - name: Checkout
+      - name: 🧩 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
 
-      - name: Install deps
+      - name: 📦 Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: 🧱 Build Next.js app
         run: npm run build
 
-      - name: Generate route manifest
+      - name: 🗺️ Generate routes manifest
         run: npm run generate:routes
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Playwright browsers
+      - name: 🎭 Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Start Next server
-        run: nohup npx next start -p 3000 >/dev/null 2>&1 &
-
-      - name: Wait for server
+      - name: 🚀 Run accessibility tests (Playwright + Pa11y + Lighthouse)
         run: |
-          npx wait-on -t 60000 $BASE_URL
+          npm i -D start-server-and-test
+          npx start-server-and-test 'npm run start' $BASE_URL \
+            'npx playwright test && npm run test:pa11y && npm run test:lhci'
 
-      - name: Playwright (axe serious/critical)
-        run: npx playwright test
-        continue-on-error: false
-
-      - name: Pa11y CI (errors only)
-        run: npm run test:pa11y
-        continue-on-error: false
-
-      - name: Lighthouse CI (A11y ≥ 0.95)
-        run: npm run test:lhci
-        continue-on-error: false
-
-      - name: Upload Playwright report
+      - name: 📤 Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report
 
-      - name: Upload Pa11y report (ndjson)
+      - name: 📤 Upload Pa11y report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: pa11y-report
           path: pa11y-report.ndjson
 
-      - name: Upload Lighthouse report
+      - name: 📤 Upload Lighthouse report
         if: always()
         uses: actions/upload-artifact@v4
         with:
