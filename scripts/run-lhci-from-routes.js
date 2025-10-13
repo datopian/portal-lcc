@@ -6,7 +6,7 @@ const urls = routes.map(r => `${base}${r}`);
 
 const final = {
   ci: {
-    collect: { url: urls, numberOfRuns: 1, startServerCommand: null },
+    collect: {urls, numberOfRuns: 1, startServerCommand: null },
     assert: baseCfg.ci.assert,
     upload: baseCfg.ci.upload
   }

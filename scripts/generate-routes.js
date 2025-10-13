@@ -1,4 +1,4 @@
-//Expose /__routes.json API route to auto-discover static routes for scanning.
+// Generate public/__routes.json with auto-discovered static routes for scanning.
 
 const fs = require("fs");
 const path = require("path");
@@ -6,7 +6,6 @@ const path = require("path");
 const PAGES_DIR = path.join(process.cwd(), "pages");
 const OUT = path.join(process.cwd(), "public", "__routes.json");
 
-// consider only these file extensions as pages
 const exts = new Set([".js", ".jsx", ".ts", ".tsx"]);
 
 function isPageFile(file) {
