@@ -61,7 +61,7 @@ export default function DatasetSearchFilters() {
         <FacetCard
           title={
             <>
-              Refine by <span className="text-accent">Organization</span>
+              Refine by <span className="">Organization</span>
             </>
           }
           showClear={options.orgs.length > 0}
@@ -90,7 +90,7 @@ export default function DatasetSearchFilters() {
           <FacetCard
             title={
               <>
-                Refine by <span className="text-accent">Theme</span>
+                Refine by <span className="">Theme</span>
               </>
             }
             showClear={options.groups.length > 0}
@@ -122,7 +122,7 @@ export default function DatasetSearchFilters() {
           <FacetCard
             title={
               <>
-                Refine by <span className="text-accent">Tags</span>
+                Refine by <span className="">Tags</span>
               </>
             }
             showClear={options.tags.length > 0}
@@ -152,7 +152,7 @@ export default function DatasetSearchFilters() {
           <FacetCard
             title={
               <>
-                Refine by <span className="text-accent">Format</span>
+                Refine by <span className="">Format</span>
               </>
             }
             showClear={options.resFormat.length > 0}
@@ -226,13 +226,13 @@ function DatasetTypeOption({
       }}
       className={classNames(
         "flex items-center justify-between w-full",
-        !isActive && "opacity-50",
+        !isActive && "",
         "hover:opacity-100 transition-all"
       )}
     >
       <div className="flex items-center gap-3">
         <Icon className={classNames("w-5 h-5", isActive && "text-accent")} />{" "}
-        {title}
+        <span className={isActive && "font-semibold text-black"}>{title}</span>
       </div>
       {!!count && (
         <span className="ml-auto w-[24px] h-[24px] inline-flex items-center justify-center rounded-full bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">

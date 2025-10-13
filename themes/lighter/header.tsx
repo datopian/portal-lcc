@@ -44,24 +44,24 @@ export default function LighterThemeHeader() {
             <div className="flex gap-x-8 align-center">
               <Link
                 href="/search"
-                className={`font-semibold my-auto ${
-                  router.pathname === "/search" ? "text-accent" : ""
+                className={`font-semibold my-auto border-b-2 ${
+                  router.pathname === "/search" ? "border-accent" : "border-transparent"
                 }`}
               >
                 SEARCH
               </Link>
               <Link
                 href="/organizations"
-                className={`font-semibold my-auto ${
-                  router.pathname === "/organizations" ? "text-accent" : ""
+                className={`font-semibold my-auto border-b-2 ${
+                  router.pathname === "/organizations" ? "border-accent" : "border-transparent"
                 }`}
               >
                 ORGANIZATIONS
               </Link>
               <Link
                 href="/themes"
-                className={`font-semibold my-auto ${
-                  router.pathname === "/themes" ? "text-accent" : ""
+                className={`font-semibold my-auto border-b-2 ${
+                  router.pathname === "/themes" ? "border-accent" : "border-transparent"
                 }`}
               >
                 THEMES
@@ -89,7 +89,7 @@ export default function LighterThemeHeader() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-4 py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <span className="sr-only">Datopian</span>
+            <span className="sr-only">LCC</span>
             <Link href="/" className="-m-1.5 p-1.5 inline-block md:hidden">
               <Image src={portalLogo} alt="logo" height={75} width={225} />
             </Link>
@@ -106,7 +106,7 @@ export default function LighterThemeHeader() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6 flex flex-col">
                 <Link href="/search" className="font-semibold my-auto">
-                  DATASETS
+                  SEARCH
                 </Link>
                 <Link href="/organizations" className="font-semibold my-auto">
                   ORGANIZATIONS

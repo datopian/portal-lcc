@@ -27,7 +27,7 @@ const LigtherTheme = ({
      
       <a
         href="#main-content"
-        className="absolute left-0 top-0 bg-accent text-white py-2 px-4 z-50 transform -translate-y-full focus:translate-y-0 transition"
+        className="absolute left-0 top-0 bg-accent text-black py-2 px-4 z-50 transform -translate-y-full focus:translate-y-0 transition"
       >
         Skip to main content
       </a>
