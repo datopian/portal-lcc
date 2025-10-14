@@ -54,15 +54,15 @@ export default function HeroSectionLight({
             )}
             <Stat
               Icon={RiFunctionLine}
-              href="/themes"
+              href="/topics"
               count={stats.groupCount}
-              label="Theme"
+              label="Topic"
             />
             <Stat
               Icon={RiTeamLine}
-              href="/organizations"
+              href="/organisations"
               count={stats.orgCount}
-              label="Organization"
+              label="Organisation"
             />
           </div>
         </div>

@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       },
     ],
     useful: [
-      { name: "Organizations", href: "/organizations" },
+      { name: "Organisations", href: "/organisations" },
       { name: "Request data", href: "/request" },
       { name: "Login", href: "https://cloud.portaljs.com/auth/signin" },
     ],

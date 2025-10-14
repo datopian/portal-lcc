@@ -51,20 +51,20 @@ export default function LighterThemeHeader() {
                 SEARCH
               </Link>
               <Link
-                href="/organizations"
+                href="/organisations"
                 className={`font-semibold my-auto border-b-2 ${
-                  router.pathname === "/organizations" ? "border-accent" : "border-transparent"
+                  router.pathname === "/organisations" ? "border-accent" : "border-transparent"
                 }`}
               >
-                ORGANIZATIONS
+                ORGANISATIONS
               </Link>
               <Link
-                href="/themes"
+                href="/topics"
                 className={`font-semibold my-auto border-b-2 ${
-                  router.pathname === "/themes" ? "border-accent" : "border-transparent"
+                  router.pathname === "/topics" ? "border-accent" : "border-transparent"
                 }`}
               >
-                THEMES
+                TOPICS
               </Link>
             </div>
           </div>
@@ -108,11 +108,11 @@ export default function LighterThemeHeader() {
                 <Link href="/search" className="font-semibold my-auto">
                   SEARCH
                 </Link>
-                <Link href="/organizations" className="font-semibold my-auto">
-                  ORGANIZATIONS
+                <Link href="/organisations" className="font-semibold my-auto">
+                  ORGANISATIONS
                 </Link>
-                <Link href="/themes" className="font-semibold my-auto">
-                  THEMES
+                <Link href="/topics" className="font-semibold my-auto">
+                  Topics
                 </Link>
               </div>
             </div>
