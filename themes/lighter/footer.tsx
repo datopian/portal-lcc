@@ -28,7 +28,7 @@ const LighterThemeFooter: React.FC = () => {
         href: "/search",
       },
       {
-        name: "Explore visualizations",
+        name: "Explore visualisations",
         href: "/search?type=visualization",
       },
       {

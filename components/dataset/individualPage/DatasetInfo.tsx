@@ -32,7 +32,7 @@ export default function DatasetInfo({
             rel="noopener noreferrer"
           >
             <RiExternalLinkLine className="w-5 h-5" />
-            Access Visualization
+            Access Visualisation
           </a>
         )}
         {!!dataset.resources.length && (

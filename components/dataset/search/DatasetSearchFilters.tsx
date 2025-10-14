@@ -50,7 +50,7 @@ export default function DatasetSearchFilters() {
               count={packageSearchResults?.count}
             />
             <DatasetTypeOption
-              title="Visualizations"
+              title="Visualisations"
               Icon={ChartBarIcon}
               type="visualization"
               count={visualizationsSearchResults?.count}
