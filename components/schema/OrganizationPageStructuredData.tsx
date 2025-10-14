@@ -51,10 +51,10 @@ export function OrganizationPageStructuredData() {
         description={description}
       />
       <SiteLinksSearchBoxJsonLd
-        url={`${url}/organisations`}
+        url={`${url}`}
         potentialActions={[
           {
-            target: `${url}/organisations`,
+            target: `${url}/search?q={search_term_string}`,
             queryInput: "search_term_string"
           },
         ]}

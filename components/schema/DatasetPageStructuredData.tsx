@@ -65,7 +65,7 @@ export function DatasetPageStructuredData({ dataset }: { dataset: Dataset }) {
         name={title}
         description={description}
         creator={{
-          '@type': 'Organisation',
+          '@type': 'Organization',
           name: ownerOrg,
         }}
         keywords={dataset.tags?.map(tag => tag.name) || []}

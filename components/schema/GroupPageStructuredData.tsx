@@ -45,16 +45,16 @@ export function GroupPageStructuredData() {
         ]}
       />
       <WebPageJsonLd
-        id={`${url}/topcis#webpage`}
-        url={`${url}/topcis`}
+        id={`${url}/topics#webpage`}
+        url={`${url}/topics`}
         name={title}
         description={description}
       />
       <SiteLinksSearchBoxJsonLd
-        url={`${url}/topcis`}
+        url={`${url}/topics`}
         potentialActions={[
           {
-            target: `${url}/topcis`,
+            target: `${url}/topics`,
             queryInput: "search_term_string"
           },
         ]}

@@ -112,7 +112,7 @@ export default function LighterThemeHeader() {
                   ORGANISATIONS
                 </Link>
                 <Link href="/topics" className="font-semibold my-auto">
-                  Topics
+                  TOPICS
                 </Link>
               </div>
             </div>
