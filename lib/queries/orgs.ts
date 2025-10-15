@@ -88,7 +88,7 @@ export const getAllOrganizations = async ({
    */
   if (organizations && detailed) {
     organizations = await Promise.all(
-      organizations.map(async (o) => {
+      organizations.filter((o)=>o.name!=mainOrg).map(async (o) => {
         const orgDetails = await getOrganization({
           name: o.name,
         });

@@ -56,10 +56,10 @@ export default function MainSection({
         <section className="relative">
           {groups.length > 4 && (
             <Link
-              href="/themes"
+              href="/topics"
               className={`font-montserrat border-b-2 border-accent font-semibold flex items-center gap-1 uppercase hover:text-accent ml-auto w-fit absolute right-0 top-[-30px]`}
             >
-              View all themes
+              View all topics
               <ArrowLongRightIcon width={16} />
             </Link>
           )}

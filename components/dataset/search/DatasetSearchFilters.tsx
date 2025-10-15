@@ -50,7 +50,7 @@ export default function DatasetSearchFilters() {
               count={packageSearchResults?.count}
             />
             <DatasetTypeOption
-              title="Visualizations"
+              title="Visualisations"
               Icon={ChartBarIcon}
               type="visualization"
               count={visualizationsSearchResults?.count}
@@ -61,7 +61,7 @@ export default function DatasetSearchFilters() {
         <FacetCard
           title={
             <>
-              Refine by <span className="">Organization</span>
+              Refine by <span className="">Organisation</span>
             </>
           }
           showClear={options.orgs.length > 0}
@@ -90,7 +90,7 @@ export default function DatasetSearchFilters() {
           <FacetCard
             title={
               <>
-                Refine by <span className="">Theme</span>
+                Refine by <span className="">Topic</span>
               </>
             }
             showClear={options.groups.length > 0}

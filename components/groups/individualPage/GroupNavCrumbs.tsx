@@ -19,7 +19,7 @@ export default function GroupNavCrumbs({
             <span className="sr-only">Home</span>
           </Link>
           <Link
-            href="/groups"
+            href="/topics"
             className="font-semibold "
             style={{ minWidth: "fit-content" }}
           >
@@ -37,10 +37,10 @@ export default function GroupNavCrumbs({
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
-            Groups
+            Topics
           </Link>
           {group.name && group.title && (
-            <Link href={`/groups/${group.name}`} className="font-semibold ">
+            <Link href={`/topics/${group.name}`} className="font-semibold ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

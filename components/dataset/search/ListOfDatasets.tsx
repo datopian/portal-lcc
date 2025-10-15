@@ -26,7 +26,7 @@ function ListItems() {
         <div className="flex gap-2">
           <h2 className="text-[23px] leading-[28px] capitalize font-bold  ">
             {searchResults?.count}{" "}
-            {options.type === "visualization" ? "Visualizations" : "Datasets"}
+            {options.type === "visualization" ? "Visualisations" : "Datasets"}
           </h2>
         </div>
         <div className="flex gap-2 cursor-pointer">

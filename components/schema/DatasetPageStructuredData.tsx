@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd, LogoJsonLd, NextSeo, DatasetJsonLd } from "next-seo";
 
 export function DatasetPageStructuredData({ dataset }: { dataset: Dataset }) {
   const title = dataset.title || dataset.name
-  const ownerOrg = dataset?.organization?.name || "Organization"
+  const ownerOrg = dataset?.organization?.name || "Organisation"
   const datasetUrl = `${url}/@${ownerOrg}/${dataset.name}`
   const description = dataset.notes || "Dataset page of " + title
 
