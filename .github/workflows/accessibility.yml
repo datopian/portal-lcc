@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BASE_URL: http://localhost:3000
+      DMS: https://api.cloud.portaljs.com
+      NEXT_PUBLIC_ORG: lcc
 
     steps:
       - name: 🧩 Checkout repository
