@@ -9,6 +9,7 @@ import { getTimeAgo } from "@/lib/utils";
 import { Dataset } from "@/schemas/dataset.interface";
 import { RiExternalLinkLine } from "react-icons/ri";
 import { useEffect, useRef, useState } from "react";
+import MarkdownRenderer from "@/components/_shared/MarkdownRender";
 
 function uniqueFormat(resources) {
   const formats = resources.map((item: Resource) => item.format);
@@ -139,7 +140,7 @@ export default function DatasetInfo({
             !showFullDescription ? "line-clamp-4" : ""
           }`}
         >
-          {description}
+          <MarkdownRenderer content={description}/>
         </p>
         {isTruncated && (
           <button
