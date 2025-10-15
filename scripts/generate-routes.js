@@ -13,19 +13,21 @@ function isPageFile(file) {
 }
 
 function toRoute(relPath) {
-  // strip extension
   const noExt = relPath.replace(/\.(t|j)sx?$/, "");
-  // remove index
+  // remove trailing "index"
   let route = noExt.replace(/\/index$/, "");
-  // ignore underscore pages (_app, _document, _error)
+
+  // ignore special pages and folders
   if (path.basename(route).startsWith("_")) return null;
-  // ignore anything in /api
   if (route.startsWith("api/")) return null;
-  // ignore dynamic routes [param]
   if (route.includes("[")) return null;
 
-  route = "/" + route.replace(/\\/g, "/");
-  return route === "/." ? "/" : route;
+  // convert backslashes to forward slashes
+  route = route.replace(/\\/g, "/");
+
+  if (route === "" || route === "index") return "/";
+
+  return "/" + route;
 }
 
 function collectRoutes(dir) {
@@ -44,8 +46,7 @@ function collectRoutes(dir) {
     }
   }
   walk(dir);
-  // Ensure at least common pages exist if present in project
-  // (this repo already has these pages, so the scan should find them)
+
   return Array.from(routes).sort();
 }
 
