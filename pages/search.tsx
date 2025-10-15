@@ -94,10 +94,12 @@ function SearchPageContent() {
     theme: { styles },
   } = useTheme();
 
+  const type = options.type === "visualization" ? "visualisation" : options.type;
+
   return (
     <Layout>
       <div className="grid grid-rows-searchpage-hero">
-        <HeroSection title="Search" titleAccent={`${options.type}s`} />
+        <HeroSection title="Search" titleAccent={`${type}s`} />
         <section className={`grid row-start-3 row-span-2 col-span-full pt-4 `}>
           <div className={`custom-container bg-white ${styles.shadowMd}`}>
             <DatasetSearchForm />

@@ -37,7 +37,7 @@ export default function DatasetCard({
                 <img src="/images/icons/org.svg" alt="" />
                 {dataset.organization
                   ? dataset.organization.title
-                  : "No organization"}
+                  : "No organisation"}
               </span>
             )}
             <span
@@ -56,7 +56,7 @@ export default function DatasetCard({
                 <span className="bg-gray-200 px-4 py-1 rounded-full text-xs">
                   {dataset.organization
                     ? dataset.organization.title
-                    : "No organization"}
+                    : "No organisation"}
                 </span>
               )}
               <span className="bg-gray-200 px-4 py-1 rounded-full text-xs">

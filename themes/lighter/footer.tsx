@@ -18,8 +18,8 @@ const LighterThemeFooter: React.FC = () => {
       { name: "Sign up to our newsletter", href: "https://www.lincolnshire.gov.uk/countycatchup", target: "_blank" },
     ],
     useful: [
-      { name: "Organizations", href: "/organizations" },
-      { name: "Themes", href: "/themes" },
+      { name: "Organisations", href: "/organisations" },
+      { name: "Topics", href: "/topics" },
       { name: "Login", href: "https://cloud.portaljs.com/auth/signin" },
     ],
     getStarted: [
@@ -28,7 +28,7 @@ const LighterThemeFooter: React.FC = () => {
         href: "/search",
       },
       {
-        name: "Explore visualizations",
+        name: "Explore visualisations",
         href: "/search?type=visualization",
       },
       {

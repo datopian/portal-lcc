@@ -6,7 +6,7 @@ export function OrganizationIndividualPageStructuredData({ org }: { org: Organiz
   const encodedOrgName = encodeURIComponent(org.name || org.title || '')
   const orgUrl = `${url}/@${encodedOrgName}`
   const title = org.title || org.name
-  const description = org.description || "Organization page of " + title
+  const description = org.description || "Organisation page of " + title
   const image = org.image_display_url || imageUrl
   return (
     <>

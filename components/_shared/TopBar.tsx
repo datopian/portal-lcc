@@ -28,7 +28,7 @@ export default function Example() {
                 DATASETS
               </Link>
               <Link
-                href="/organizations"
+                href="/organisations"
                 className="font-semibold text-white my-auto"
               >
                 ORGS
@@ -87,7 +87,7 @@ export default function Example() {
                   DATASETS
                 </Link>
                 <Link
-                  href="/organizations"
+                  href="/organisations"
                   className="font-semibold text-white my-auto"
                 >
                   ORGS
