@@ -22,7 +22,7 @@ const MarkdownRenderer: React.FC<Props> = ({ content }) => {
           a: ({ node, ...props }) => (
             <a
               {...props}
-              className="underline hover:text-[#000]"
+              className="underline text-[#000] hover:text-accent"
               target="_blank"
               rel="noopener noreferrer"
             />
