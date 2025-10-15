@@ -3,9 +3,10 @@
     "standard": "WCAG2AA",
     "timeout": 60000,
     "wait": 1000,
-    "level": "error"
+    "level": "error",
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+    }
   },
-  "urls": [
-   
-  ]
+  "urls": []
 }
