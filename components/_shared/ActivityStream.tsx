@@ -6,7 +6,7 @@ interface ActivityStreamProps {
 }
 export default function ActivityStream({ activities }: ActivityStreamProps) {
   return (
-    <div className="py-8 w-full h-[50vh]">
+    <div className="py-8 w-full ">
       {activities.map((activity: Activity) => (
         <div key={activity.id}>
           <div className="flex flex-row items-start mb-10">

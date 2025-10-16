@@ -44,7 +44,7 @@ export default function DatasetInfo({
   }, [dataset.notes]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-fit">
       <div className="flex flex-col gap-y-3">
         {dataset.type === "visualization" && !!dataset.external_url && (
           <a
@@ -134,14 +134,14 @@ export default function DatasetInfo({
         </span>
       </div>
       <div className="py-4 my-4 border-y">
-        <p
+        <div
           ref={textRef}
           className={`text-sm font-normal text-stone-500 transition-all ${
             !showFullDescription ? "line-clamp-4" : ""
           }`}
         >
           <MarkdownRenderer content={description}/>
-        </p>
+        </div>
         {isTruncated && (
           <button
             onClick={() => setShowFullDescription(!showFullDescription)}
