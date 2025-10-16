@@ -34,7 +34,7 @@ export default function ResourcesList({
             </div>
           </article>
           <div className="flex  gap-2 justify-start pt-2 sm:pt-0">
-            {(["csv", "pdf", "xlsx", "xls", "geojson"].includes(
+            {(["csv", "pdf", "xlsx", "xls", "geojson", "mp4"].includes(
               resource.format.toLowerCase()
             ) ||
               resource?.iframe) && (

@@ -5,12 +5,17 @@ import { CKAN } from "@portaljs/ckan";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { RiArrowLeftLine } from "react-icons/ri";
+import {
+  RiArrowLeftLine,
+  RiDownload2Line,
+  RiExternalLinkLine,
+} from "react-icons/ri";
 import ResourcesBadges from "@/components/dataset/_shared/ResourcesBadges";
 import { PrimeReactProvider } from "primereact/api";
 import ResponsiveGridData from "@/components/responsiveGrid";
 import { getTimeAgo } from "@/lib/utils";
 import { ResourcePageStructuredData } from "@/components/schema/ResourcePageStructuredData";
+import MarkdownRenderer from "@/components/_shared/MarkdownRender";
 
 const PdfViewer = dynamic(
   () => import("@portaljs/components").then((mod) => mod.PdfViewer),
@@ -170,27 +175,26 @@ export default function ResourcePage({
               <div className=" py-4">
                 <Link
                   href={resource.url}
+                  target={resource.iframe ? "_blank" : "_self"}
                   className="bg-accent-400 h-auto py-2 px-4 text-sm text-black rounded-lg font-roboto font-bold hover:bg-accent transition ring-1 ring-inset ring-accent hover:shadow duration-150 flex items-center gap-1 w-fit"
                 >
-                  Download
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-                    />
-                  </svg>
+                  {resource.iframe ? (
+                    <>
+                      Access
+                      <RiExternalLinkLine className="text-[16px]" />
+                    </>
+                  ) : (
+                    <>
+                      Download
+                      <RiDownload2Line className="text-[16px]" />
+                    </>
+                  )}
                 </Link>
               </div>
               <div className="py-4">
-                <p className="text-stone-500">{resource.description}</p>
+                <div className="text-stone-500">
+                  <MarkdownRenderer content={resource.description || ""} />
+                </div>
               </div>
               <div className="">
                 {resourceFormat == "csv" ? (
@@ -202,6 +206,18 @@ export default function ResourcePage({
                     url={resource.url}
                     parentClassName="h-[900px]"
                   />
+                )}
+                {resourceFormat === "mp4" && (
+                  <video
+                    src={resource.url}
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    style={{ width: "100%", }}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 )}
                 {["xlsx", "xls"].includes(resourceFormat) && (
                   <ExcelViewer url={resource.url} />
@@ -215,7 +231,7 @@ export default function ResourcePage({
                 {resource?.iframe && (
                   <iframe
                     src={resource.url}
-                    style={{ width: `100%`, height: `600px` }}
+                    style={{ width: `100%`, height: `800px` }}
                   ></iframe>
                 )}
               </div>
