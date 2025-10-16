@@ -22,7 +22,7 @@ Connect our PortalJS MCP Server to ChatGPT or Claude Desktop to search, explore,
 2. Go to **Settings** → **Connectors**
 3. Click **Add Custom Connector**
 4. Enter the connector URL:
-   ```
+   ```text
    https://portaljs-mcp-server.datopian.workers.dev/sse
    ```
 5. Click **Add**
@@ -91,7 +91,7 @@ View the actual data from any resource in table format:
 
 Here's a typical conversation flow:
 
-```
+```text
 You: "Search for datasets about house pricing"
 
 AI: [Returns list of housing datasets]
