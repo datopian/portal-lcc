@@ -7,7 +7,7 @@ export default function Tabs({ items }: TabProps) {
   return (
     <>
       <Tab.Group>
-        <Tab.List>
+        <Tab.List className="sticky top-0 bg-white z-10">
           {items.map((item, index) => (
             <Tab key={item.id}>
               {({ selected }) => (

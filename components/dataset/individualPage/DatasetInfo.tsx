@@ -9,6 +9,7 @@ import { getTimeAgo } from "@/lib/utils";
 import { Dataset } from "@/schemas/dataset.interface";
 import { RiExternalLinkLine } from "react-icons/ri";
 import { useEffect, useRef, useState } from "react";
+import MarkdownRenderer from "@/components/_shared/MarkdownRender";
 
 function uniqueFormat(resources) {
   const formats = resources.map((item: Resource) => item.format);
@@ -43,7 +44,7 @@ export default function DatasetInfo({
   }, [dataset.notes]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-fit">
       <div className="flex flex-col gap-y-3">
         {dataset.type === "visualization" && !!dataset.external_url && (
           <a
@@ -133,14 +134,14 @@ export default function DatasetInfo({
         </span>
       </div>
       <div className="py-4 my-4 border-y">
-        <p
+        <div
           ref={textRef}
           className={`text-sm font-normal text-stone-500 transition-all ${
             !showFullDescription ? "line-clamp-4" : ""
           }`}
         >
-          {description}
-        </p>
+          <MarkdownRenderer content={description}/>
+        </div>
         {isTruncated && (
           <button
             onClick={() => setShowFullDescription(!showFullDescription)}
