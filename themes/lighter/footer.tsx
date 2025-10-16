@@ -149,12 +149,24 @@ const LighterThemeFooter: React.FC = () => {
         </div>
       </div>
       <div
-        className={`custom-container flex flex-col justify-center flex-wrap py-6 mx-auto md:items-center lg:items-start md:flex-row md:flex-nowrap`}
+        className={`custom-container flex flex-col items-center flex-wrap py-6 mx-auto md:flex-row md:items-center   md:flex-nowrap`}
       >
-        <Link href="/" className="block mx-auto">
+         <Link href="/" className="block ">
           <Image src={portalLogo} alt="logo" height={75} width={225} />
         </Link>
+
+        <div className="md:ml-auto mt-4 md:mt-0">
+          <a
+            className="flex flex-col md:flex-row items-center gap-1"
+            href="https://portaljs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="text-sm">Built with</span><span className="font-extrabold text-[#1f2937] text-xl sm:text-lg font-roboto ">🌀 PortalJS</span>
+          </a>
+        </div>
       </div>
+
     </footer>
   );
 };
