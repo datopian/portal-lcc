@@ -11,7 +11,7 @@ Connect our PortalJS MCP Server to ChatGPT or Claude Desktop to search, explore,
 3. Click **Add MCP Server**
 4. Enter the following details:
    - **Name**: PortalJS Data Portal
-   - **URL**: `https://portaljs-mcp-server.datopian.workers.dev/sse`
+   - **URL**: `https://mcp.portaljs.com/sse`
    - **Type**: SSE (Server-Sent Events)
 5. Click **Save**
 6. The server should now appear in your MCP connections list
@@ -23,7 +23,7 @@ Connect our PortalJS MCP Server to ChatGPT or Claude Desktop to search, explore,
 3. Click **Add Custom Connector**
 4. Enter the connector URL:
    ```text
-   https://portaljs-mcp-server.datopian.workers.dev/sse
+   https://mcp.portaljs.com/sse
    ```
 5. Click **Add**
 6. The PortalJS server should now be available in your MCP connections
