@@ -40,17 +40,17 @@ export default function ResourcesList({
               resource?.iframe) && (
               <Link
                 href={`/@${orgName}/${datasetName}/r/${resource.id}`}
-                className="px-2 py-1 border  h-fit shadow hover:shadow-lg transition-all text-sm  text-center text-dark rounded font-roboto font-bold border-accent-50 hover:border-accent-100 hover:bg-accent-100  duration-150 flex items-center justify-center gap-1"
+                className="px-2 py-1 border  h-[30px] shadow hover:shadow-lg transition-all text-sm  text-center text-dark rounded font-roboto font-bold border-accent-50 hover:border-accent-100 hover:bg-accent-100  duration-150 flex items-center justify-center gap-1"
               >
                 <span>Preview</span>
-                <RiEyeLine />
+                <RiEyeLine  className="text-[16px]"/>
                 
               </Link>
             )}
             {resource.url && (
               <Link
                 href={resource.url}
-                className="bg-accent-400 min-w-[103px] px-2 py-1 h-fit shadow hover:shadow-lg transition-all text-sm  text-center text-black rounded font-roboto font-bold hover:bg-accent duration-150 flex items-center justify-center gap-1"
+                className="bg-accent-400 min-w-[103px] px-2 py-1 h-[30px] shadow hover:shadow-lg transition-all text-sm  text-center text-black rounded font-roboto font-bold hover:bg-accent duration-150 flex items-center justify-center gap-1"
                 target={resource.iframe ? "_blank" : "_self"}
               >
                 {resource.iframe ? (
