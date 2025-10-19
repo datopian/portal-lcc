@@ -1,6 +1,6 @@
 import { Resource } from "@/schemas/resource.interface";
 import Link from "next/link";
-import { RiDownload2Fill, RiEyeLine } from "react-icons/ri";
+import { RiDownload2Line, RiExternalLinkLine, RiEyeLine } from "react-icons/ri";
 import ResourcesBadges from "../_shared/ResourcesBadges";
 
 interface ResourcesListProps {
@@ -42,17 +42,30 @@ export default function ResourcesList({
                 href={`/@${orgName}/${datasetName}/r/${resource.id}`}
                 className="px-2 py-1 border  h-fit shadow hover:shadow-lg transition-all text-sm  text-center text-dark rounded font-roboto font-bold border-accent-50 hover:border-accent-100 hover:bg-accent-100  duration-150 flex items-center justify-center gap-1"
               >
-                <RiEyeLine />
                 <span>Preview</span>
+                <RiEyeLine />
+                
               </Link>
             )}
             {resource.url && (
               <Link
                 href={resource.url}
-                className="bg-accent-400 px-2 py-1 h-fit shadow hover:shadow-lg transition-all text-sm  text-center text-black rounded font-roboto font-bold hover:bg-accent duration-150 flex items-center justify-center gap-1"
+                className="bg-accent-400 min-w-[103px] px-2 py-1 h-fit shadow hover:shadow-lg transition-all text-sm  text-center text-black rounded font-roboto font-bold hover:bg-accent duration-150 flex items-center justify-center gap-1"
+                target={resource.iframe ? "_blank" : "_self"}
               >
-                <RiDownload2Fill />
-                <span>Download</span>
+                {resource.iframe ? (
+                  <>
+                  Access
+                    <RiExternalLinkLine className="text-[16px]" />
+                    
+                  </>
+                ) : (
+                  <>
+                    Download
+                    <RiDownload2Line className="text-[16px]" />
+                    
+                  </>
+                )}
               </Link>
             )}
           </div>
