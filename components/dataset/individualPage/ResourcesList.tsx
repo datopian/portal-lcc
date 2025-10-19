@@ -13,6 +13,9 @@ export default function ResourcesList({
   orgName,
   datasetName,
 }: ResourcesListProps) {
+  const isExternal = (resource:Resource) => {
+    return resource?.iframe || !resource.url?.includes("blob.datopian.com");
+  }
   return (
     <div className="py-8 w-full flex flex-col gap-4 ">
       {resources.map((resource: Resource) => (
@@ -51,9 +54,9 @@ export default function ResourcesList({
               <Link
                 href={resource.url}
                 className="bg-accent-400 min-w-[103px] px-2 py-1 h-[30px] shadow hover:shadow-lg transition-all text-sm  text-center text-black rounded font-roboto font-bold hover:bg-accent duration-150 flex items-center justify-center gap-1"
-                target={resource.iframe ? "_blank" : "_self"}
+                target={isExternal(resource) ? "_blank" : "_self"}
               >
-                {resource.iframe ? (
+                {isExternal(resource) ? (
                   <>
                   Access
                     <RiExternalLinkLine className="text-[16px]" />
