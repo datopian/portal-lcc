@@ -145,6 +145,13 @@ NEXT_PUBLIC_ORG=lcc
 
 ---
 
+**Result:**
+Every PR and push runs Playwright, Pa11y, and Lighthouse against all routes.
+The pipeline fails if WCAG 2.2 AA violations or scores below 0.95 are detected.
+Full HTML/JSON/NDJSON reports are automatically uploaded as GitHub Action artifacts for review.
+
+---
+
 ## References
 
 * [WCAG 2.2 Quick Ref](https://www.w3.org/WAI/WCAG22/quickref/)
@@ -152,11 +159,4 @@ NEXT_PUBLIC_ORG=lcc
 * [Pa11y CI](https://github.com/pa11y/pa11y-ci)
 * [Playwright a11y guide](https://playwright.dev/docs/accessibility-testing)
 * [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
-
----
-
-✅ **Result:**
-Every PR and push runs Playwright, Pa11y, and Lighthouse against all routes.
-The pipeline fails if WCAG 2.2 AA violations or scores below 0.95 are detected.
-Full HTML/JSON/NDJSON reports are automatically uploaded as GitHub Action artifacts for review.
 
