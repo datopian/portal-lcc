@@ -110,6 +110,43 @@ export default function DatasetInfo({
           Updated:{" "}
           {dataset.metadata_modified && getTimeAgo(dataset.metadata_modified)}
         </span>
+        {dataset.source && dataset.source.length > 0 && (
+          <div className="font-medium text-gray-500">
+            <div className="flex items-start gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                />
+              </svg>
+              <div className="flex flex-col gap-1">
+                <span>Source{dataset.source.length > 1 ? "s" : ""}:</span>
+                <div className="flex flex-col gap-1.5">
+                  {dataset.source.map((url, index) => (
+                    <a
+                      key={index}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent hover:text-darkaccent flex items-center gap-1 break-all transition"
+                    >
+                      <RiExternalLinkLine className="w-4 h-4 flex-shrink-0" />
+                      <span className="underline">{url}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       <div className="py-4 my-4 border-y">
         <p className="text-sm font-normal text-stone-500 line-clamp-4">
