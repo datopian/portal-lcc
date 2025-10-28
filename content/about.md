@@ -4,8 +4,8 @@ Lincolnshire Open Data has been created to support Lincolnshire County Council's
 
 Lincolnshire Open Data is the place where Lincolnshire County Council's internal data will be readily accessible. The council's datasets will be added to by a number of datasets owned by other organisations and thought to provide valuable data about Lincolnshire.
 
-This site contains a catalogue of data. You can search for, preview, and download a wide range of data in a number of different themes shown as **Groups** (see the [Groups](https://lincolnshire.ckan.io/group) link at the top).  
-A list of all datasets on the site is shown in the [Open Datasets Register](https://lincolnshire.ckan.io/dataset/open-datasets-register).
+This site contains a catalogue of data. You can search for, preview, and download a wide range of data in a number of different themes (see the [Topics](/topics) link at the top).  
+A list of all datasets on the site is shown in the [Open Datasets Register](/@resources/open-datasets-register).
 
 For more information on the council's Approach to Open Data, please see this document:  
 [LCC's Approach to Open Data - Lincolnshire County Council](https://drive.google.com/a/datopian.com/file/d/1hzNQRsHjuLknwu233eVH5I5mtS8D96lN/view?usp=sharing)
