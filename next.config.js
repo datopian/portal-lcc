@@ -26,8 +26,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/group/:slug',
-        destination: '/topic/:slug',
+        source: '/groups/:slug',
+        destination: '/topics/:slug',
         permanent: true,
       },
     ];
