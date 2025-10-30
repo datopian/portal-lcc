@@ -23,6 +23,15 @@ const nextConfig = {
   publicRuntimeConfig: {
     DOMAINS: domains, // Make domains accessible at runtime
   },
+  async redirects() {
+    return [
+      {
+        source: '/group/:slug',
+        destination: '/topic/:slug',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
