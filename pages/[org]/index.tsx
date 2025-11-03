@@ -67,7 +67,7 @@ export default function OrgPage({ org }): JSX.Element {
     {
       id: "datasets",
       content: org.packages ? (
-        <DatasetList datasets={org.packages ? org.packages : []} />
+        <DatasetList type="organization" name={org.name} />
       ) : (
         ""
       ),
