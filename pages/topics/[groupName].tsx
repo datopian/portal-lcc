@@ -51,7 +51,7 @@ export default function GroupPage({ group }): JSX.Element {
     {
       id: "datasets",
       content: group.packages ? (
-        <DatasetList type="group" name={group.name} />
+        <DatasetList type="group" name={group._name} />
       ) : (
         ""
       ),

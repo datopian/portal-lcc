@@ -4,7 +4,6 @@ import useSWR from "swr";
 import DatasetItem from "../dataset/search/DatasetItem";
 import Pagination from "./PaginationOrgGroup";
 import { searchDatasets } from "@/lib/queries/dataset";
-import { publicToPrivateGroupName, publicToPrivateOrgName } from "@/lib/queries/utils";
 
 interface DatasetListProps {
   type: "organization" | "group";
@@ -17,8 +16,8 @@ export default function DatasetList({ type, name }: DatasetListProps) {
   const limit = 10;
 
   const fq = type === "organization" 
-    ? `(organization:${publicToPrivateOrgName(name)})` 
-    : `(groups:${publicToPrivateGroupName(name)})`;
+    ? `(organization:${name})` 
+    : `(groups:${name})`;
 
   const { data: searchResults, isValidating } = useSWR(
     ["entity_package_search", { fq, offset, limit }],
