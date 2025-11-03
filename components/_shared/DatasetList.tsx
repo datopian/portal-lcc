@@ -7,10 +7,11 @@ import { searchDatasets } from "@/lib/queries/dataset";
 
 interface DatasetListProps {
   type: "organization" | "group";
-  name: string; // The private name (e.g., lcc--org-name)
+  name: string; 
+  initialDatasets?: any;
 }
 
-export default function DatasetList({ type, name }: DatasetListProps) {
+export default function DatasetList({ type, name, initialDatasets }: DatasetListProps) {
   const [offset, setOffset] = useState(0);
   const [subsetOfPages, setSubsetOfPages] = useState(0);
   const limit = 10;
@@ -34,6 +35,10 @@ export default function DatasetList({ type, name }: DatasetListProps) {
         tags: [],
         resFormat: [],
       });
+    },
+    {
+      fallbackData: initialDatasets || undefined,
+      revalidateOnFocus: false,
     }
   );
 
