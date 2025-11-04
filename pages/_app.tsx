@@ -31,7 +31,7 @@ const handleRouteChange = (url: string) => {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const theme = pageProps.theme || "lighter";
-    const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     router.events.on("routeChangeComplete", handleRouteChange);
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-  
+
   return (
     <div className={cn(openSans.variable, "font-sans")}>
       <ThemeProvider themeName={theme}>
