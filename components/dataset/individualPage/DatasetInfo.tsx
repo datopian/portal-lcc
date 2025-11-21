@@ -160,7 +160,6 @@ export default function DatasetInfo({
                       rel="noopener noreferrer"
                       className="text-accent hover:text-darkaccent flex items-center gap-1 break-all transition"
                     >
-                      <RiExternalLinkLine className="w-4 h-4 flex-shrink-0" />
                       <span className="underline">{url}</span>
                     </a>
                   ))}

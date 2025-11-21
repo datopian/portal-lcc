@@ -22,6 +22,8 @@ export default function TableHeadCell({ col: key }) {
 
   const [value, setValue] = useState<number[]>([min, max]);
 
+  const SHOW_FILTERS = false;
+
   return (
     <th
       className={`py-2 min-w-[140px] border-0 text-left bg-accent-50 whitespace-nowrap group  ${
@@ -55,49 +57,49 @@ export default function TableHeadCell({ col: key }) {
         </div>
         <PinButton col={key} />
       </div>
-
-      <div className="border-t border-accent-100 px-3 pt-2">
-        {/* Filters */}
-        {typeof data[0]?.[key] === "number" ? (
-          <div className=" h-[34px] flex items-center w-full group">
-            <div className="w-full">
-              <div className="mx-2 relative">
-                <Slider
-                  range
-                  value={value}
-                  min={Math.min(...data.map((row) => row[key]))}
-                  max={Math.max(...data.map((row) => row[key]))}
-                  onChange={(v: number[]) => {
-                    setValue(v);
-                    updateFilter(key, v);
-                  }}
-                  aria-label={`Range filter for ${key}`}
-                />
+      {SHOW_FILTERS && (
+        <div className="border-t border-accent-100 px-3 pt-2">
+          {typeof data[0]?.[key] === "number" ? (
+            <div className=" h-[34px] flex items-center w-full group">
+              <div className="w-full">
+                <div className="mx-2 relative">
+                  <Slider
+                    range
+                    value={value}
+                    min={Math.min(...data.map((row) => row[key]))}
+                    max={Math.max(...data.map((row) => row[key]))}
+                    onChange={(v: number[]) => {
+                      setValue(v);
+                      updateFilter(key, v);
+                    }}
+                    aria-label={`Range filter for ${key}`}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ) : isValidDate(data[0]?.[key]) ? (
-          <DateRange
-            onSelect={(v: any) => {
-              if (v[0] && v[1]) {
-                updateFilter(key, v);
-              } else {
-                updateFilter(key, []);
-              }
-            }}
-          />
-        ) : (
-          <>
-            <input
-              type="text"
-              placeholder={`Filter ${filteredData?.length} records `}
-              className="w-full shadow-sm  p-[5px] border-0 font-normal border-gray-200 rounded-md p-1 bg-white placeholder:font-normal placeholder:text-[14px]"
-              onChange={(e) => updateFilter(key, e.target.value)}
-              aria-label={`Filter  ${key}`}
+          ) : isValidDate(data[0]?.[key]) ? (
+            <DateRange
+              onSelect={(v: any) => {
+                if (v[0] && v[1]) {
+                  updateFilter(key, v);
+                } else {
+                  updateFilter(key, []);
+                }
+              }}
             />
-          </>
-        )}
-      </div>
+          ) : (
+            <>
+              <input
+                type="text"
+                placeholder={`Filter ${filteredData?.length} records `}
+                className="w-full shadow-sm  p-[5px] border-0 font-normal border-gray-200 rounded-md p-1 bg-white placeholder:font-normal placeholder:text-[14px]"
+                onChange={(e) => updateFilter(key, e.target.value)}
+                aria-label={`Filter  ${key}`}
+              />
+            </>
+          )}
+        </div>
+      )}
 
       {pinnedColumns.includes(key) && (
         <span className="absolute right-[0px] h-full w-[1px] bg-gray-100 top-0"></span>
