@@ -56,8 +56,7 @@ export default function TableHeadCell({ col: key }) {
         <PinButton col={key} />
       </div>
 
-      <div className="border-t border-accent-100 px-3 pt-2">
-        {/* Filters */}
+      {/*<div className="border-t border-accent-100 px-3 pt-2">
         {typeof data[0]?.[key] === "number" ? (
           <div className=" h-[34px] flex items-center w-full group">
             <div className="w-full">
@@ -97,7 +96,7 @@ export default function TableHeadCell({ col: key }) {
             />
           </>
         )}
-      </div>
+      </div>*/}
 
       {pinnedColumns.includes(key) && (
         <span className="absolute right-[0px] h-full w-[1px] bg-gray-100 top-0"></span>
