@@ -1,14 +1,15 @@
 import { useResourceData } from "./DataProvider";
+import Papa from "papaparse";
 
 export default function TableActions() {
   const { dataUrl, data } = useResourceData();
   const handleDownload = () => {
-    const jsonString = JSON.stringify(data, null, 2);
-    const blob = new Blob([jsonString], { type: "application/json" });
+    const csv = Papa.unparse(data);
+    const blob = new Blob([csv], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "data.json";
+    a.download = "data.csv";
     a.click();
     URL.revokeObjectURL(url);
   };
