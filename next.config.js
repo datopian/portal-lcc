@@ -1,4 +1,18 @@
-// const { withContentlayer } = require("next-contentlayer");
+const path = require("path");
+const fs = require("fs");
+
+const datasetListPath = path.join(__dirname, "public", "old-ckan-datasets-list.json");
+const datasetList = fs.existsSync(datasetListPath)
+  ? JSON.parse(fs.readFileSync(datasetListPath, "utf8"))
+  : [];
+
+const datasetRedirects = datasetList
+  .filter((entry) => entry && entry.name && entry.organization)
+  .map(({ name, organization }) => ({
+    source: `/dataset/${name}/:path*`,
+    destination: `/@${organization}/${name}`,
+    permanent: true,
+  }));
 
 /** @type {import('next').NextConfig} */
 const domains = [
@@ -30,6 +44,7 @@ const nextConfig = {
         destination: '/topics/:slug',
         permanent: true,
       },
+      ...datasetRedirects,
     ];
   },
 };
