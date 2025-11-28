@@ -5,7 +5,9 @@ export default function TableActions() {
   const { dataUrl, data } = useResourceData();
   const handleDownload = () => {
     const csv = Papa.unparse(data);
-    const blob = new Blob([csv], { type: "text/csv" });
+    const blob = new Blob(["\uFEFF" + csv], {
+      type: "text/csv;charset=utf-8;",
+    });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
