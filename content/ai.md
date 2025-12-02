@@ -1,80 +1,63 @@
 # Explore Data with AI
 
-Connect our PortalJS MCP Server to ChatGPT or Claude Desktop to search, explore, and preview datasets using natural language.
+You can now connect the Data Portal's MCP Server to your favourite AI chatbot and explore the Lincolnshire open data using natural language.
 
 ## Setup Instructions
 
-### Connecting to ChatGPT
+MCP Server URL: https://mcp.portaljs.com/@lcc/sse
 
-1. Open ChatGPT
-2. Go to **Settings** → **Model Context Protocol (MCP)**
-3. Click **Add MCP Server**
-4. Enter the following details:
-   - **Name**: PortalJS Data Portal
-   - **URL**: `https://mcp.portaljs.com/sse`
-   - **Type**: SSE (Server-Sent Events)
-5. Click **Save**
-6. The server should now appear in your MCP connections list
----
-### Connecting to Claude Desktop
+### Setup Instructions (Any MCP-Compatible Client)
 
-1. Open Claude Desktop
-2. Go to **Settings** → **Connectors**
-3. Click **Add Custom Connector**
-4. Enter the connector URL:
-   ```text
-   https://mcp.portaljs.com/sse
-   ```
-5. Click **Add**
-6. The PortalJS server should now be available in your MCP connections
----
+Different AI apps expose MCP setup in different places, but the required fields are the same. Look for something like “MCP Servers”, “Model Context Protocol”, or “Connectors” in your client’s settings.
+
+Add a new MCP server with:
+
+- Name: Lincolnshire Open Data
+- URL: https://mcp.portaljs.com/@lcc/sse
+- (Optional) Transport / Type: SSE (Server-Sent Events)
+
+Save/enable the connection. Once active, your AI client can call PortalJS tools.
+
 ## How to Use
 
 Once connected, you can interact with the data portal using natural language. The AI will automatically use the appropriate tools based on your requests.
 
-### **Search for Datasets**
+### Search for Datasets
 
 Find datasets by describing what you're looking for:
 
 **Example prompts:**
-- "Search for datasets about CO2 emissions"
-- "Find data on housing prices"
-- "Look for climate change datasets"
-- "Show me datasets related to population statistics"
+
+- Search for datasets about CO2 emissions
+- Find data on housing prices
+- Look for climate change datasets
+- Show me datasets related to population statistics
 
 The search will return a list of matching datasets with their titles, descriptions, and IDs.
 
----
-### **Fetch Dataset Details**
+### Fetch Dataset Details
 
 Get detailed information about a specific dataset:
 
 **Example prompts:**
-- "Fetch details for dataset idb--house_price"
-- "Show me information about the CO2 emissions dataset"
-- "Get the resources for the housing dataset"
-- "What resources are available in dataset xyz-123?"
+
+- Show me details of house-prices dataset
+- Show me information about the CO2 emissions dataset
 
 The fetch tool returns complete dataset metadata including:
+
 - Title and description
 - Organization
 - Resources (files) with formats and download URLs
 - Tags and creation dates
 - License information
 
----
+### Preview Dataset
 
-### **Preview Dataset**
-
-View the actual data from any resource in table format:
-
-**Example prompts:**
-- "Preview this dataset"
-- "Show me the data from resource abc-123"
-- "I want to see a preview of the house pricing data"
-- "Display the first 20 rows of this resource"
+View the actual data from a resource in table format. Once you found the dataset, you can request to display a preview of a data resource.
 
 **The preview displays:**
+
 - Data formatted as a markdown table
 - Download link to the full resource
 - Number of records available
@@ -85,32 +68,26 @@ View the actual data from any resource in table format:
 > - "Preview 50 rows of this dataset"
 > - "Show me the first 15 records"
 
----
-
 ## Complete Workflow Example
 
 Here's a typical conversation flow:
 
-```text
-You: "Search for datasets about house pricing"
+> You: "Search for datasets about house prices"
 
-AI: [Returns list of housing datasets]
+> AI: [Returns list of housing datasets]
 
-You: "Fetch details for the first one"
+> You: "Fetch details for the first one"
 
-AI: [Shows complete dataset information with resources]
+> AI: [Shows complete dataset information with resources]
 
-You: "Preview the CSV resource"
+> You: "Preview the CSV resource"
 
-AI: [Displays data table with download link]
-```
+> AI: [Displays data table with download link]
 
 ## Available Tools
 
 The MCP server provides three main tools:
 
 1. **search** - Search datasets by keywords
-2. **fetch** - Get detailed dataset information
+2. **get** - Get detailed dataset information
 3. **preview_data_table** - View data in table format with download links
-
-*All tools work seamlessly through natural language - no need to memorize commands or syntax!*
